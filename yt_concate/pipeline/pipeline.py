@@ -1,4 +1,4 @@
-from yt-concate.pipeline.steps.step import StepException
+from yt_concate.pipeline.steps.step import StepException
 
 
 class Pipeline:
@@ -6,6 +6,7 @@ class Pipeline:
         self.steps = steps
 
     def run(self, inputs):
+        data = None
         for step in self.steps:
             try:
                 data = step.process(data, inputs)
